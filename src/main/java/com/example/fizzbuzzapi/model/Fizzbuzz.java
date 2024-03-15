@@ -13,13 +13,13 @@ public class Fizzbuzz {
     @Id
     @Column
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long fizzbuzz_id;
+    private Long fizzbuzzId;
 
     @Column
-    private String useragent;
+    private String userAgent;
 
     @Column
-    private Date creation_date;
+    private Date creationDate;
 
     @Column
     private String message;
@@ -28,37 +28,37 @@ public class Fizzbuzz {
     public Fizzbuzz() {
     }
 
-    public Fizzbuzz(Long fizzbuzz_id, String useragent, String creation_date, String message) {
-        this.fizzbuzz_id = fizzbuzz_id;
-        this.useragent = useragent;
+    public Fizzbuzz(Long fizzbuzzId, String userAgent, String creationDate, String message) {
+        this.fizzbuzzId = fizzbuzzId;
+        this.userAgent = userAgent;
         // this initializes the creationDate field to the current date/time when a new FizzBuzz object is created.
-        this.creation_date = new Date();
+        this.creationDate = new Date();
         this.message = message;
     }
 
 
-    public Long getFizzbuzz_id() {
-        return fizzbuzz_id;
+    public Long getFizzbuzzId() {
+        return fizzbuzzId;
     }
 
-    public void setFizzbuzz_id(Long fizzbuzz_id) {
-        this.fizzbuzz_id = fizzbuzz_id;
+    public void setFizzbuzzId(Long fizzbuzzId) {
+        this.fizzbuzzId = fizzbuzzId;
     }
 
-    public String getUseragent() {
-        return useragent;
+    public String getUserAgent() {
+        return userAgent;
     }
 
-    public void setUseragent(String useragent) {
-        this.useragent = useragent;
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
     }
 
-    public Date getCreation_date() {
-        return this.creation_date;
+    public Date getCreationDate() {
+        return this.creationDate;
     }
 
-    public void setCreation_date(Date creation_date) {
-        this.creation_date = creation_date;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
     public String getMessage() {
@@ -73,9 +73,9 @@ public class Fizzbuzz {
     @Override
     public String toString() {
         return "Fizzbuzz{" +
-                "fizzbuzz_id=" + fizzbuzz_id +
-                ", useragent='" + useragent + '\'' +
-                ", creation_date='" + creation_date + '\'' +
+                "fizzbuzzId=" + fizzbuzzId +
+                ", userAgent='" + userAgent + '\'' +
+                ", creationDate='" + creationDate + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }
