@@ -77,8 +77,6 @@ As a user, I want to be able to create a new fizzbuzz object so that I can save 
 
 * HTTP requests/endpoints spreadsheet - https://docs.google.com/spreadsheets/d/1ft-ChXrkbnJuuh9GB2JBouI0cmy8hgnQB66kLevDEUc/edit?usp=drive_link 
 
-* ERD (entity relationship diagram) - https://lucid.app/lucidchart/f35638ac-af6c-4141-9ae5-32bc98da5388/edit?page=0_0&invitationId=inv_eaf57936-4575-4394-a1c1-f6072fb91405# 
-
 
 
 ### Author
