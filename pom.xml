@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
 <!--    <groupId>org.example</groupId>-->
-<!--    <artifactId>FizzBuzz-API</artifactId>-->
+<!--    <artifactId>FizzBuzzAPI</artifactId>-->
 <!--    <version>1.0-SNAPSHOT</version>-->
 <!--    <properties>-->
 <!--        <maven.compiler.source>17</maven.compiler.source>-->
@@ -21,10 +21,10 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>Fizzbuzz-API</artifactId>
+    <artifactId>FizzbuzzAPI</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Fizzbuzz-API</name>
-    <description>Fizzbuzz-API</description>
+    <name>FizzbuzzAPI</name>
+    <description>FizzbuzzAPI</description>
 
     <properties>
         <java.version>17</java.version>
