@@ -25,7 +25,7 @@ Finally, I created an ERD (entity relationship diagram) to plan my different mod
 
 ## Entity Relationship Diagram
 
-<img src="./images/FizzBuzzERD.png" alt="ERD">
+<img src="./images/FizzbuzzERD.png" alt="ERD">
 
 
 
@@ -33,32 +33,32 @@ Finally, I created an ERD (entity relationship diagram) to plan my different mod
 
 <b>User Story 1:</b>
 <br>
-As a user, I want to be able to search for different fizzbuzzes so that I can discover new fizzbuzzes. (GET all fizzbuzzes)
+As a user, I want to be able to list all fizzbuzzes so that I can view all fizzbuzzes. (GET all fizzbuzzes)
 
 <b>Acceptance Criteria:</b>
 <br>
-* User can search for all fizzbuzzes.
+* User can list all fizzbuzz objects.
 * Search results should display a list of all fizzbuzzes.
 
 
 <b>User Story 2:</b>
 <br>
-As a user, I want to be able to search for specific fizzbuzzes so that I can view its specific details (user agent, creation date, and message ). (GET individual fizzbuzz by fizzbuzz ID)
+As a user, I want to be able to retrieve a single fizzbuzz object so that I can view its specific details (user agent, creation date, and message). (GET individual fizzbuzz by fizzbuzz ID)
 
 <b>Acceptance Criteria:</b>
 <br>
-* User can filter search results by fizzbuzz.
+* User can retrieve a single fizzbuzz object.
 * Search results should return an exact match to the user's search criteria.
 
 
 <b>User Story 3:</b>
 <br>
-As a user, I want to be able to create a new fizzbuzz so that I can save it. (POST fizzbuzz)
+As a user, I want to be able to create a new fizzbuzz object so that I can save it. (POST fizzbuzz)
 
 <b>Acceptance Criteria:</b>
 <br>
-* User can create new fizzbuzzes.
-* User can save newly created fizzbuzzes.
+* User can create a new fizzbuzz object.
+* User can save newly created fizzbuzz objects.
 
 
 
@@ -73,11 +73,11 @@ As a user, I want to be able to create a new fizzbuzz so that I can save it. (PO
 
 
 ### Links
-* User Stories -
+* User Stories - https://docs.google.com/document/d/1viJjuitQMFVt2MorLFZDaMloTSTEtss5ngITOS-lnDI/edit?usp=drive_link 
 
-* HTTP requests/endpoints spreadsheet -
+* HTTP requests/endpoints spreadsheet - https://docs.google.com/spreadsheets/d/1ft-ChXrkbnJuuh9GB2JBouI0cmy8hgnQB66kLevDEUc/edit?usp=drive_link 
 
-* ERD (entity relationship diagram) -
+* ERD (entity relationship diagram) - https://lucid.app/lucidchart/f35638ac-af6c-4141-9ae5-32bc98da5388/edit?page=0_0&invitationId=inv_eaf57936-4575-4394-a1c1-f6072fb91405# 
 
 
 
