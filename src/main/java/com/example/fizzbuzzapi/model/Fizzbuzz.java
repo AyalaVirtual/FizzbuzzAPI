@@ -1,8 +1,9 @@
-package model;
+package com.example.fizzbuzzapi.model;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,7 +19,7 @@ public class Fizzbuzz {
     private String useragent;
 
     @Column
-    private String creation_date;
+    private Date creation_date;
 
     @Column
     private String message;
@@ -30,7 +31,8 @@ public class Fizzbuzz {
     public Fizzbuzz(Long fizzbuzz_id, String useragent, String creation_date, String message) {
         this.fizzbuzz_id = fizzbuzz_id;
         this.useragent = useragent;
-        this.creation_date = creation_date;
+        // this initializes the creationDate field to the current date/time when a new FizzBuzz object is created.
+        this.creation_date = new Date();
         this.message = message;
     }
 
@@ -51,11 +53,11 @@ public class Fizzbuzz {
         this.useragent = useragent;
     }
 
-    public String getCreation_date() {
-        return creation_date;
+    public Date getCreation_date() {
+        return this.creation_date;
     }
 
-    public void setCreation_date(String creation_date) {
+    public void setCreation_date(Date creation_date) {
         this.creation_date = creation_date;
     }
 
