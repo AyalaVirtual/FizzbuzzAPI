@@ -64,10 +64,10 @@ As a user, I want to be able to create a new fizzbuzz object so that I can save 
 
 ## HTTP Endpoints
 
-| Request Type | URL            | Functionality      | Access | 
-|--------------|----------------|--------------------|--------|
-| POST         | /api/fizzbuzz/ | Create fizzbuzz    | Public |
-| GET          | /api/fizzbuzz/ | Get all fizzbuzzes | Public |
+| Request Type | URL              | Functionality        | Access | 
+|--------------|------------------|----------------------|--------|
+| POST         | /api/fizzbuzz/   | Create fizzbuzz      | Public |
+| GET          | /api/fizzbuzz/   | Get all fizzbuzzes   | Public |
 | GET          | /api/fizzbuzz/1/ | Get single fizzbuzz  | Public |
 
 
