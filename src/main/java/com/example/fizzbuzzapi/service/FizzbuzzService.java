@@ -62,20 +62,19 @@ public class FizzbuzzService {
      * @param userAgent represents the user who created the fizzbuzz object.
      */
     public void createFizzbuzz(String message, String userAgent) {
-            // This validates the input
-            if (message == null || message.isEmpty()) {
-                throw new IllegalArgumentException("Message cannot be null or empty");
-            } else if (userAgent == null || userAgent.isEmpty()) {
-                throw new IllegalArgumentException("User agent cannot be null or empty");
-            }
-
-            Fizzbuzz fizzbuzz = new Fizzbuzz();
-            fizzbuzz.setUserAgent(userAgent);
-            fizzbuzz.setCreationDate(new Date());
-            fizzbuzz.setMessage(message);
-
-            fizzbuzzRepository.save(fizzbuzz);
+        // This validates the input
+        if (message == null || message.isEmpty()) {
+            throw new IllegalArgumentException("Message cannot be null or empty");
+        } else if (userAgent == null || userAgent.isEmpty()) {
+            throw new IllegalArgumentException("User agent cannot be null or empty");
         }
+
+        Fizzbuzz fizzbuzz = new Fizzbuzz();
+        fizzbuzz.setUserAgent(userAgent);
+        fizzbuzz.setCreationDate(new Date());
+        fizzbuzz.setMessage(message);
+
+        fizzbuzzRepository.save(fizzbuzz);
     }
 
 }

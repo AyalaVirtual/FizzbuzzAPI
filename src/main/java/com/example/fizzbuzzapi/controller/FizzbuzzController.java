@@ -59,7 +59,7 @@ public class FizzbuzzController {
 
         if (fizzbuzzOptional.isPresent()) {
             message.put("message", "success");
-            message.put("data", fizzbuzzId);
+            message.put("data", fizzbuzzOptional);
             return new ResponseEntity<>(message, HttpStatus.OK);
         } else {
             message.put("message", "fizzbuzz with id " + fizzbuzzId + " not found");
@@ -77,13 +77,12 @@ public class FizzbuzzController {
      */
     @PostMapping(path="/fizzbuzz/")
     public ResponseEntity<?> createFizzbuzz(@RequestBody String message, HttpServletRequest request) {
-            // This retrieves the user agent from the request headers
-            String userAgent = request.getHeader("User-Agent");
+        // This retrieves the user agent from the request headers
+        String userAgent = request.getHeader("User-Agent");
 
-            // This creates the fizzbuzz object with the message input from the user and the user agent from the request headers
-            fizzbuzzService.createFizzbuzz(message, userAgent);
-            return new ResponseEntity<>(message, HttpStatus.CREATED);
-        }
+        // This creates the fizzbuzz object with the message input from the user and the user agent from the request headers
+        fizzbuzzService.createFizzbuzz(message, userAgent);
+        return new ResponseEntity<>(message, HttpStatus.CREATED);
     }
 
 }
