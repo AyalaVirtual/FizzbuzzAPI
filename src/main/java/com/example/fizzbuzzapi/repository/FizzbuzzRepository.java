@@ -10,4 +10,7 @@ public interface FizzbuzzRepository extends JpaRepository<Fizzbuzz, Long> {
 
     // This method finds a fizzbuzz by  its id
     Optional<Fizzbuzz> findById(Long fizzbuzzId);
+
+    // This method finds a fizzbuzz by its message
+    Fizzbuzz findByMessage(String fizzbuzzMessage);
 }
