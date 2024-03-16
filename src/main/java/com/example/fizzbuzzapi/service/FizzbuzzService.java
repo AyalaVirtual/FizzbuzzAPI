@@ -61,8 +61,7 @@ public class FizzbuzzService {
      * @param fizzbuzzObject represents the new fizzbuzz object the user is trying to create
      * @param userAgent represents the user who created the fizzbuzz object
      */
-//    public void createFizzbuzz(String message, String userAgent) {
-    public void createFizzbuzz(Fizzbuzz fizzbuzzObject, String userAgent) {
+     public void createFizzbuzz(Fizzbuzz fizzbuzzObject, String userAgent) {
         // This validates the input
         if (fizzbuzzObject.getMessage() == null || fizzbuzzObject.getMessage().isEmpty()) {
             throw new IllegalArgumentException("Message cannot be null or empty");

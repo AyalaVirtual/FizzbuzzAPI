@@ -28,7 +28,7 @@ public class FizzbuzzController {
 
 
     /**
-     * This sets the path for GET requests for all fizzbuzzes and checks if the list of fizzbuzzes is empty or not before deciding whether to send an HTTP status message of OK or NOT FOUND
+     * This sets the path for GET requests for all fizzbuzzes and checks if the list of fizzbuzzes is empty or not before deciding whether to send an HTTP status message of OK or NOT FOUND.
      *
      * @return the HTTP status message
      */
@@ -48,7 +48,7 @@ public class FizzbuzzController {
 
 
     /**
-     * This sets the path for GET requests for an individual fizzbuzz and checks if the fizzbuzz exists or not before deciding whether to send an HTTP status message of OK or NOT FOUND
+     * This sets the path for GET requests for an individual fizzbuzz and checks if the fizzbuzz exists or not before deciding whether to send an HTTP status message of OK or NOT FOUND.
      *
      * @param fizzbuzzId represents the id of the specific fizzbuzz the user is trying to get
      * @return the HTTP status message
@@ -69,11 +69,11 @@ public class FizzbuzzController {
 
 
      /**
-     * This sets the path for POST requests for a new fizzbuzz and  before sending an HTTP status message of CREATED
+     * This sets the path for POST requests for a new fizzbuzz and  before sending an HTTP status message of CREATED.
      *
-     * @param message represents the message content for the new fizzbuzz object.
-     * @param request represents the HTTP servlet request containing additional request information.
-     * @return the HTTP status message as "CREATED" if the fizzbuzz object is created successfully.
+     * @param fizzbuzzObject represents the new fizzbuzz object the user is trying to create
+     * @param request represents the HTTP servlet request containing additional request information
+     * @return the HTTP status message as "CREATED" if the fizzbuzz object is created successfully
      */
     @PostMapping(path="/fizzbuzz/")
     public ResponseEntity<?> createFizzbuzz(@RequestBody Fizzbuzz fizzbuzzObject, HttpServletRequest request) {
@@ -82,7 +82,12 @@ public class FizzbuzzController {
 
         // This creates the fizzbuzz object with the new fizzbuzz object that the user is trying to create and the user agent from the request headers
         fizzbuzzService.createFizzbuzz(fizzbuzzObject, userAgent);
-        return new ResponseEntity<>(message, HttpStatus.CREATED);
+
+        // This constructs the response body with a success message
+        HashMap<String, String> responseBody = new HashMap<>();
+        responseBody.put("message", "success");
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(responseBody);
     }
 
 }
