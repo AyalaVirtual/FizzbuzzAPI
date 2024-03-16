@@ -29,7 +29,7 @@ public class Fizzbuzz {
     public Fizzbuzz() {
     }
 
-    public Fizzbuzz(Long fizzbuzzId, String userAgent, String creationDate, String message) {
+    public Fizzbuzz(Long fizzbuzzId, String userAgent, Date creationDate, String message) {
         this.fizzbuzzId = fizzbuzzId;
         this.userAgent = userAgent;
         // this initializes the creationDate field to the current date/time when a new FizzBuzz object is created.

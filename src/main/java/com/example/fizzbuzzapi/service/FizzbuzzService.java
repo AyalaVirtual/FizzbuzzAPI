@@ -1,6 +1,5 @@
 package com.example.fizzbuzzapi.service;
 
-import com.example.fizzbuzzapi.exception.InformationExistException;
 import com.example.fizzbuzzapi.exception.InformationNotFoundException;
 import org.springframework.stereotype.Service;
 import com.example.fizzbuzzapi.repository.FizzbuzzRepository;
@@ -8,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import com.example.fizzbuzzapi.model.Fizzbuzz;
 import java.util.Optional;
+import java.util.Date;
 
 
 @Service
 public class FizzbuzzService {
+
     private FizzbuzzRepository fizzbuzzRepository;
 
 
@@ -30,7 +31,7 @@ public class FizzbuzzService {
         List<Fizzbuzz> fizzbuzzList = fizzbuzzRepository.findAll();
 
         if (fizzbuzzList.isEmpty()) {
-            throw new InformationNotFoundException("no fizzbuzzes found");
+            throw new InformationNotFoundException("fizzbuzz list not found");
         } else {
             return fizzbuzzList;
         }
@@ -55,19 +56,25 @@ public class FizzbuzzService {
 
 
     /**
-     * This is a POST request that checks to see if a fizzbuzz already exists before either throwing an InformationExistException, or saving the newly created fizzbuzz to the repository
+     * This is a POST request that validates the input for the message and the user agent before setting the user agent, creation date, and message, and then saving the newly created fizzbuzz to the repository. Otherwise, if the message or user agent is null or empty, it will throw an IllegalArgumentException.
      *
-     * @param fizzbuzzObject represents the new fizzbuzz the user is trying to create
-     * @return newly created fizzbuzz
+     * @param message represents the message content for the new fizzbuzz object.
+     * @param userAgent represents the user who created the fizzbuzz object.
      */
-    public Fizzbuzz createFizzbuzz(Fizzbuzz fizzbuzzObject) {
-        Fizzbuzz fizzbuzz = fizzbuzzRepository.findByMessage(fizzbuzzObject.getMessage());
+    public void createFizzbuzz(String message, String userAgent) {
+            // This validates the input
+            if (message == null || message.isEmpty()) {
+                throw new IllegalArgumentException("Message cannot be null or empty");
+            } else if (userAgent == null || userAgent.isEmpty()) {
+                throw new IllegalArgumentException("User agent cannot be null or empty");
+            }
 
-        if (fizzbuzz != null) {
-            throw new InformationExistException("fizzbuzz with message " + fizzbuzzObject.getMessage() + " already exists");
-        } else {
-            fizzbuzzRepository.save(fizzbuzzObject);
-            return fizzbuzzObject;
+            Fizzbuzz fizzbuzz = new Fizzbuzz();
+            fizzbuzz.setUserAgent(userAgent);
+            fizzbuzz.setCreationDate(new Date());
+            fizzbuzz.setMessage(message);
+
+            fizzbuzzRepository.save(fizzbuzz);
         }
     }
 
