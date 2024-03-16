@@ -76,12 +76,12 @@ public class FizzbuzzController {
      * @return the HTTP status message as "CREATED" if the fizzbuzz object is created successfully.
      */
     @PostMapping(path="/fizzbuzz/")
-    public ResponseEntity<?> createFizzbuzz(@RequestBody String message, HttpServletRequest request) {
+    public ResponseEntity<?> createFizzbuzz(@RequestBody Fizzbuzz fizzbuzzObject, HttpServletRequest request) {
         // This retrieves the user agent from the request headers
         String userAgent = request.getHeader("User-Agent");
 
-        // This creates the fizzbuzz object with the message input from the user and the user agent from the request headers
-        fizzbuzzService.createFizzbuzz(message, userAgent);
+        // This creates the fizzbuzz object with the new fizzbuzz object that the user is trying to create and the user agent from the request headers
+        fizzbuzzService.createFizzbuzz(fizzbuzzObject, userAgent);
         return new ResponseEntity<>(message, HttpStatus.CREATED);
     }
 

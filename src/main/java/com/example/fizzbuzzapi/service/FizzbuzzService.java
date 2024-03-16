@@ -23,7 +23,7 @@ public class FizzbuzzService {
 
 
     /**
-     * This is a GET request that checks to see if the list of fizzbuzzes is empty before either throwing an InformationNotFoundException, or  returning the list of fizzbuzzes
+     * This is a GET request that checks to see if the list of fizzbuzzes is empty before either throwing an InformationNotFoundException, or  returning the list of fizzbuzzes.
      *
      * @return a list of all fizzbuzzes
      */
@@ -39,7 +39,7 @@ public class FizzbuzzService {
 
 
     /**
-     * This is a GET request that checks to see if an individual fizzbuzz exists before either returning it, or throwing an InformationNotFoundException
+     * This is a GET request that checks to see if an individual fizzbuzz exists before either returning it, or throwing an InformationNotFoundException.
      *
      * @param fizzbuzzId represents the id of the specific fizzbuzz the user is trying to get
      * @return fizzbuzz by id if it exists
@@ -58,12 +58,13 @@ public class FizzbuzzService {
     /**
      * This is a POST request that validates the input for the message and the user agent before setting the user agent, creation date, and message, and then saving the newly created fizzbuzz to the repository. Otherwise, if the message or user agent is null or empty, it will throw an IllegalArgumentException.
      *
-     * @param message represents the message content for the new fizzbuzz object.
-     * @param userAgent represents the user who created the fizzbuzz object.
+     * @param fizzbuzzObject represents the new fizzbuzz object the user is trying to create
+     * @param userAgent represents the user who created the fizzbuzz object
      */
-    public void createFizzbuzz(String message, String userAgent) {
+//    public void createFizzbuzz(String message, String userAgent) {
+    public void createFizzbuzz(Fizzbuzz fizzbuzzObject, String userAgent) {
         // This validates the input
-        if (message == null || message.isEmpty()) {
+        if (fizzbuzzObject.getMessage() == null || fizzbuzzObject.getMessage().isEmpty()) {
             throw new IllegalArgumentException("Message cannot be null or empty");
         } else if (userAgent == null || userAgent.isEmpty()) {
             throw new IllegalArgumentException("User agent cannot be null or empty");
@@ -72,7 +73,7 @@ public class FizzbuzzService {
         Fizzbuzz fizzbuzz = new Fizzbuzz();
         fizzbuzz.setUserAgent(userAgent);
         fizzbuzz.setCreationDate(new Date());
-        fizzbuzz.setMessage(message);
+        fizzbuzz.setMessage(fizzbuzzObject.getMessage());
 
         fizzbuzzRepository.save(fizzbuzz);
     }
