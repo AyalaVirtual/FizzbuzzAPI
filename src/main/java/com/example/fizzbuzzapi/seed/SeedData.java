@@ -5,7 +5,6 @@ import com.example.fizzbuzzapi.repository.FizzbuzzRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
 import java.util.Date;
 import java.util.Random;
 
@@ -42,37 +41,40 @@ public class SeedData implements CommandLineRunner {
 
     String randomUserAgent = generateRandomUserAgent();
 
+    // This generates a random date and stores it in a variable
+    Date randomDate = new Date();
+
 
     @Override
     public void run(String... args) throws Exception {
 
         Fizzbuzz fizzbuzz1 = new Fizzbuzz();
         fizzbuzz1.setUserAgent(randomUserAgent);
-        fizzbuzz1.setCreationDate(new Date());
+        fizzbuzz1.setCreationDate(randomDate);
         fizzbuzz1.setMessage("Java beats all other programming languages.");
         fizzbuzzRepository.save(fizzbuzz1);
 
         Fizzbuzz fizzbuzz2 = new Fizzbuzz();
         fizzbuzz2.setUserAgent(randomUserAgent);
-        fizzbuzz2.setCreationDate(new Date());
+        fizzbuzz2.setCreationDate(randomDate);
         fizzbuzz2.setMessage("The Spring framework is versatile.");
         fizzbuzzRepository.save(fizzbuzz2);
 
         Fizzbuzz fizzbuzz3 = new Fizzbuzz();
         fizzbuzz3.setUserAgent(randomUserAgent);
-        fizzbuzz3.setCreationDate(new Date());
+        fizzbuzz3.setCreationDate(randomDate);
         fizzbuzz3.setMessage("React is the best front end framework.");
         fizzbuzzRepository.save(fizzbuzz3);
 
         Fizzbuzz fizzbuzz4 = new Fizzbuzz();
         fizzbuzz4.setUserAgent(randomUserAgent);
-        fizzbuzz4.setCreationDate(new Date());
+        fizzbuzz4.setCreationDate(randomDate);
         fizzbuzz4.setMessage("PostgreSQL and H2 database are my favorites.");
         fizzbuzzRepository.save(fizzbuzz4);
 
         Fizzbuzz fizzbuzz5 = new Fizzbuzz();
         fizzbuzz5.setUserAgent(randomUserAgent);
-        fizzbuzz5.setCreationDate(new Date());
+        fizzbuzz5.setCreationDate(randomDate);
         fizzbuzz5.setMessage("Ruby on Rails is interesting and I'd like to learn it.");
         fizzbuzzRepository.save(fizzbuzz5);
     }
