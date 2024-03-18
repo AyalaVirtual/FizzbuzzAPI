@@ -10,7 +10,8 @@ FizzBuzz is an API allowing consumers to view fizzbuzzes and create them. The AP
 * Spring Data (JPA)
 * H2 Database
 * Postman
-* Apache Tomcat
+* Apache Tomcat 
+* MockMVC 
 * IntelliJ
 
 
@@ -69,6 +70,14 @@ As a user, I want to be able to create a new fizzbuzz object so that I can save 
 | POST         | /api/fizzbuzz/   | Create fizzbuzz      | Public |
 | GET          | /api/fizzbuzz/   | Get all fizzbuzzes   | Public |
 | GET          | /api/fizzbuzz/1/ | Get single fizzbuzz  | Public |
+
+
+
+## Major Hurdles
+
+Although all my endpoints work fine in Postman with no issues, I was only able to get 2 of my 3 tests to pass when using MockMVC to test my controller. The problem lies in the test for the POST method, so I know it's just a matter of me doing more research into how to refactor the logic for one particular line in that test. 
+
+Unfortunately, I was working on a very short deadline for this project, but I do plan on continuing to work on it in order to correct this issue. 
 
 
 
